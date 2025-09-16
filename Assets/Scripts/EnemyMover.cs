@@ -1,0 +1,46 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CubeMover : MonoBehaviour
+{
+    [SerializeField] private WayPoints wayPoints;
+    [SerializeField] private RespawnEnemy respawnEnemy;
+    [SerializeField] private Transform enemyPrefab;
+    [SerializeField] private float speed = 3f;    
+
+    private List<Transform> points;
+    private int currentIndex = 0;
+
+    private void Start()
+    {
+        wayPoints = GameObject.FindGameObjectWithTag("WayPointHolder").GetComponent<WayPoints>();
+        respawnEnemy = GameObject.FindGameObjectWithTag("GameManager").GetComponent<RespawnEnemy>();
+        
+        if (wayPoints != null)
+            points = wayPoints.GetWaypoints();
+    }
+
+    private void Update()
+    {
+        if (points == null || points.Count == 0) return;
+
+        Transform target = points[currentIndex];
+
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            target.position,
+            speed * Time.deltaTime
+        );
+
+        if (Vector3.Distance(transform.position, target.position) < 0.05f)
+        {
+            currentIndex++;
+
+            if (currentIndex >= points.Count)
+            {
+                respawnEnemy.SpawnEnemy(points[0].transform.position);
+                Destroy(gameObject);
+            }
+        }
+    }
+}
