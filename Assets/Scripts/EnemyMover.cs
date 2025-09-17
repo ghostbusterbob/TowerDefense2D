@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeMover : MonoBehaviour
+public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private WayPoints wayPoints;
     [SerializeField] private RespawnEnemy respawnEnemy;

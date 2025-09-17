@@ -1,13 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class ShootTower : MonoBehaviour
 {
-    private Transform target;
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TowerStatus towerStatus;
+    
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform shootingPoint;
 
+    private float timer;
+    private Transform target;
+
+    private bool shootingCooldown = true;
+    [SerializeField] private float fireRate;
     void Update()
     {
         if (target == null)
@@ -15,6 +20,28 @@ public class ShootTower : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Enemy").transform;
         }
         transform.LookAt(target.transform);
-        transform.Rotate(0, 180, 0);    
+        transform.Rotate(0, 180, 0);
+
+        if (shootingCooldown)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= fireRate)
+            {
+                timer = 0;
+                shootingCooldown = false;
+            }
+        }
+
+        if (!shootingCooldown && towerStatus.towerPlaced)
+        {
+            ShootBullet();
+        }
+    }
+
+    private void ShootBullet()
+    {
+        Instantiate(bulletPrefab, shootingPoint.transform.position, shootingPoint.transform.rotation);
+        shootingCooldown = true;
     }
 }

@@ -14,6 +14,8 @@ public class DragTower : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
+                TowerStatus towerStatus = currentTower.GetComponent<TowerStatus>(); 
+                towerStatus.towerPlaced = true; 
                 currentTower = null; 
             }
         }
