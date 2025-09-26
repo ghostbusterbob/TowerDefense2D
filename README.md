@@ -17,6 +17,7 @@ Het heeft een leuke artstyle en leuke gameplay.
 
 ## 3. Schets van je level en UI
 Maak een schets op papier of digitaal en voeg deze afbeelding toe aan je repository. Voeg in deze sectie de afbeelding in.
+<img width="500"  alt="TowerDesign" src="https://github.com/user-attachments/assets/10aeeb23-0051-4283-a954-0e83659fcbb4" />
 
 Je schets bevat minimaal:
 1. Het pad waar de vijanden over lopen met beginpunt en eindpunt.
