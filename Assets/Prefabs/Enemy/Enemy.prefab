@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6243703542955854921}
   - component: {fileID: 3981930094979491377}
   - component: {fileID: 1858547157539826878}
+  - component: {fileID: 2661231770490466978}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -125,3 +126,17 @@ MonoBehaviour:
   respawnEnemy: {fileID: 0}
   enemyPrefab: {fileID: 9067887269954208381}
   speed: 3
+--- !u!114 &2661231770490466978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240971407204341175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d04ef4fe4a9d1d499d6af9ff5e96ad0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  enemyMover: {fileID: 1858547157539826878}

@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class DragTower : MonoBehaviour
 {
+    [SerializeField] private TowerSelect towerSelect;
+    
     private GameObject currentTower;   
     public GameObject towerPrefab;     
     public LayerMask groundMask;       
@@ -14,9 +17,8 @@ public class DragTower : MonoBehaviour
             
             if (Input.GetMouseButtonDown(0))
             {
-                TowerStatus towerStatus = currentTower.GetComponent<TowerStatus>(); 
-                towerStatus.towerPlaced = true; 
-                currentTower = null; 
+                StartCoroutine(TowerPlaced());
+                
             }
         }
         
@@ -24,6 +26,7 @@ public class DragTower : MonoBehaviour
 
     public void StartDraggingTower()
     {
+        towerPrefab = towerSelect.towers[towerSelect.selectedIndex];
         currentTower = Instantiate(towerPrefab);
     }
 
@@ -38,5 +41,13 @@ public class DragTower : MonoBehaviour
             newPos.y = 0; 
             currentTower.transform.position = newPos;
         }
+    }
+
+    IEnumerator TowerPlaced()
+    {
+        TowerStatus towerStatus = currentTower.GetComponent<TowerStatus>(); 
+        currentTower = null; 
+        yield return new WaitForSeconds(1);
+        towerStatus.towerPlaced = true; 
     }
 }

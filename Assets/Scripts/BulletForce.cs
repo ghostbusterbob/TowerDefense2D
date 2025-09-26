@@ -5,8 +5,9 @@ public class BulletForce : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject enemy;
-
     [SerializeField] private int bulletForce;
+
+    [SerializeField] private int damageAmount = 10;
     void Start()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
@@ -21,7 +22,9 @@ public class BulletForce : MonoBehaviour
     {
         if (other.transform.CompareTag("Enemy"))
         {
-            //Destroy(gameObject);
+            
+            other.transform.GetComponent<EnemyHealth>().RemoveHealth(damageAmount);
+            Destroy(gameObject);
         }
     }
 }

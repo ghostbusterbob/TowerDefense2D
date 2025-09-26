@@ -4,21 +4,23 @@ using UnityEngine;
 public class ShootTower : MonoBehaviour
 {
     [SerializeField] private TowerStatus towerStatus;
-    
+    [SerializeField] private float fireRate;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform shootingPoint;
 
     private float timer;
-    private Transform target;
+    [SerializeField]private Transform target;
 
     private bool shootingCooldown = true;
-    [SerializeField] private float fireRate;
+    
     void Update()
     {
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Enemy").transform;
-        }
+        } 
+
+        
         transform.LookAt(target.transform);
         transform.Rotate(0, 180, 0);
 
