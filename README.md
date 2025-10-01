@@ -5,6 +5,8 @@ Klas: SD2A
 
 Datum: 08/09/2025
 
+Planning: https://trello.com/b/Yp4Awj6w/towerdefenses
+
 ## 1. Titel en elevator pitch
 Titel: Tower Tactics
 
