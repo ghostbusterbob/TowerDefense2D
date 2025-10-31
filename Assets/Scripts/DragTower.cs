@@ -7,8 +7,11 @@ public class DragTower : MonoBehaviour
     
     private GameObject currentTower;   
     public GameObject towerPrefab;     
-    public LayerMask groundMask;       
+    public LayerMask groundMask;
 
+    [SerializeField] private LayerMask gridMask;
+
+    [SerializeField] private CurrencyManager currencyManager;   
     void Update()
     {
         if (currentTower != null)
@@ -18,7 +21,6 @@ public class DragTower : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(TowerPlaced());
-                
             }
         }
         
@@ -27,7 +29,17 @@ public class DragTower : MonoBehaviour
     public void StartDraggingTower()
     {
         towerPrefab = towerSelect.towers[towerSelect.selectedIndex];
-        currentTower = Instantiate(towerPrefab);
+
+
+        if (currencyManager.money >= towerPrefab.GetComponent<TowerStatus>().towerCost)
+        {
+            currentTower = Instantiate(towerPrefab);
+        } else
+        {
+            towerPrefab = null;
+        }
+
+            
     }
 
     void MoveTowerToMouse()
@@ -45,9 +57,21 @@ public class DragTower : MonoBehaviour
 
     IEnumerator TowerPlaced()
     {
-        TowerStatus towerStatus = currentTower.GetComponent<TowerStatus>(); 
-        currentTower = null; 
-        yield return new WaitForSeconds(1);
-        towerStatus.towerPlaced = true; 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        
+        if (Physics.Raycast(ray, out hit, 100f, gridMask))
+        {
+            currentTower.transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y + .5f, hit.transform.position.z);
+            
+            TowerStatus towerStatus = currentTower.GetComponent<TowerStatus>(); 
+            currencyManager.RemoveMoney(towerStatus.towerCost);
+
+            currentTower = null; 
+            yield return new WaitForSeconds(1);
+            towerStatus.towerPlaced = true; 
+        } 
+        
+        
     }
 }

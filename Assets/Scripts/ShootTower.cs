@@ -13,6 +13,7 @@ public class ShootTower : MonoBehaviour
 
     private bool shootingCooldown = true;
     
+    
     void Update()
     {
         if (target == null)

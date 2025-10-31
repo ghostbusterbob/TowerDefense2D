@@ -855,6 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   towerPlaced: 0
+  towerCost: 50
 --- !u!64 &2909365264833302558
 MeshCollider:
   m_ObjectHideFlags: 0

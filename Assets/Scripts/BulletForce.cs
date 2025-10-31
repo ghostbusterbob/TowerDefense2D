@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class BulletForce : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class BulletForce : MonoBehaviour
     [SerializeField] private int bulletForce;
 
     [SerializeField] private int damageAmount = 10;
+    
+    [SerializeField] private bool slowEffect;
+
+    private EnemyMover enemyMover;
     void Start()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy");
@@ -22,9 +28,18 @@ public class BulletForce : MonoBehaviour
     {
         if (other.transform.CompareTag("Enemy"))
         {
-            
             other.transform.GetComponent<EnemyHealth>().RemoveHealth(damageAmount);
+            enemyMover = other.transform.GetComponent<EnemyMover>();
+            StartCoroutine(RespawnEnemies(enemyMover));
             Destroy(gameObject);
         }
+    }
+
+
+    IEnumerator RespawnEnemies(EnemyMover enemy)
+    {
+        enemy.speed = 1f;
+        yield return new WaitForSeconds(3);
+        enemy.speed = enemy.initialSpeed;
     }
 }

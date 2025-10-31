@@ -8,7 +8,8 @@ public class TowerSelect : MonoBehaviour
     [SerializeField] public List<GameObject> towers;
 
     public int selectedIndex;
-    
+
+    [SerializeField] private CurrencyManager currencyManager;
 
     // Update is called once per frame
     void Update()
@@ -21,9 +22,12 @@ public class TowerSelect : MonoBehaviour
             {
                 hit.transform.gameObject.SetActive(false);
                 
-                GameObject selectedTower = towers[selectedIndex]; 
+                GameObject selectedTower = towers[selectedIndex];
+
+               
+                    Instantiate(selectedTower.gameObject, hit.transform.position, hit.transform.rotation);  
+
                 
-                Instantiate(selectedTower.gameObject, hit.transform.position, hit.transform.rotation);  
 
             }
             
@@ -32,6 +36,7 @@ public class TowerSelect : MonoBehaviour
 
     public void SelectTower(int index)
     {
+        
         selectedIndex = index;  
         Debug.Log("Tower " + index); 
     }

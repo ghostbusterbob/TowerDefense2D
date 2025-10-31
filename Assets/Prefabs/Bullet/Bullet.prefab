@@ -152,3 +152,5 @@ MonoBehaviour:
   rb: {fileID: 7456049267561658800}
   enemy: {fileID: 0}
   bulletForce: 5000
+  damageAmount: 10
+  slowEffect: 0

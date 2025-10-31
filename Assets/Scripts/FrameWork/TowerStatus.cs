@@ -1,13 +1,17 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class TowerStatus : MonoBehaviour
 { 
    [SerializeField] private int health;
+   [SerializeField] private TextMeshProUGUI healthText;  
    private int initialHealth; 
    public bool towerPlaced = false;
-   
-   private bool destroyed = false;  
+   private bool destroyed = false;
+
+
+   public int towerCost;
 
    private void Start()
    {

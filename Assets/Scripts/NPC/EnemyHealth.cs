@@ -1,12 +1,20 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private int health;
     [SerializeField] private EnemyMover enemyMover;
+
+    private CurrencyManager currencyManager;
+
+    [SerializeField] private TextMeshProUGUI healthTxt;
     //for respawning enemy
-    void Start()
+    private void Start()
     {
+        currencyManager = GameObject.Find("GameManager").GetComponent<CurrencyManager>();   
+        UpdateEnemyUi();
     }
 
     // Update is called once per frame
@@ -19,7 +27,8 @@ public class EnemyHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            enemyMover.RespawnEnemy();
+            currencyManager.AddMoney(10);
+            enemyMover.waveManager.DecreaseEnemies();
             Destroy(gameObject);
         }
     }
@@ -27,5 +36,11 @@ public class EnemyHealth : MonoBehaviour
     public void RemoveHealth(int hp)
     {
         health -= hp;  
+        UpdateEnemyUi();
+    }
+
+    private void UpdateEnemyUi()
+    {
+        healthTxt.text = health.ToString(); 
     }
 }
