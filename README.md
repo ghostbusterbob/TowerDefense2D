@@ -1,9 +1,31 @@
+```` CS
+Vector3 CalculateLaunchVelocity(Vector3 target, Vector3 origin, float timeToTarget)
+    {
+        Vector3 displacement = target - origin;
+
+        Vector3 displacementXZ = new Vector3(displacement.x, 0, displacement.z);
+
+        float horizontalDistance = displacementXZ.magnitude;
+        float verticalDistance = displacement.y;
+
+        float horizontalSpeed = horizontalDistance / timeToTarget;
+        float verticalSpeed = (verticalDistance / timeToTarget) - (0.5f * Physics.gravity.y * timeToTarget);
+
+        Vector3 result = displacementXZ.normalized * horizontalSpeed;
+        result.y = verticalSpeed;
+
+        return result;
+    }
+````
+
 # Sprint 0 - Game Design Document : Tower Defense
 Naam: Jaysen van der Wal
 
 Klas: SD2A
 
 Datum: 08/09/2025
+
+Planning: https://trello.com/b/Yp4Awj6w/towerdefenses
 
 ## 1. Titel en elevator pitch
 Titel: Tower Tactics
