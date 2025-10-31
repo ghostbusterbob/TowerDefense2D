@@ -29,8 +29,12 @@ public class BulletForce : MonoBehaviour
         if (other.transform.CompareTag("Enemy"))
         {
             other.transform.GetComponent<EnemyHealth>().RemoveHealth(damageAmount);
-            enemyMover = other.transform.GetComponent<EnemyMover>();
-            StartCoroutine(RespawnEnemies(enemyMover));
+            if (slowEffect)
+            {
+                enemyMover = other.transform.GetComponent<EnemyMover>();
+                StartCoroutine(RespawnEnemies(enemyMover));
+            }
+            
             Destroy(gameObject);
         }
     }

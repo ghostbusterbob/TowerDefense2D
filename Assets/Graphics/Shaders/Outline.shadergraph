@@ -3767,8 +3767,8 @@
     "m_ObjectId": "6cad5a8d89274af59d1d5637c572fb2b",
     "m_Title": "Detect edges based on world-space",
     "m_Position": {
-        "x": -2039.3333740234375,
-        "y": -410.6666564941406
+        "x": -2039.333251953125,
+        "y": -410.66656494140627
     }
 }
 
@@ -5730,7 +5730,7 @@
     "m_ObjectId": "c5876b772b2d4e5dbe126dcda94944ea",
     "m_Title": "Detect edges based on world-space",
     "m_Position": {
-        "x": -2027.3333740234375,
+        "x": -2027.333251953125,
         "y": 806.6666870117188
     }
 }
