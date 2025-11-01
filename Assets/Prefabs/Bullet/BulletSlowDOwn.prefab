@@ -244,6 +244,7 @@ MonoBehaviour:
   bulletForce: 5000
   damageAmount: 10
   slowEffect: 1
+  bulletImpactEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3, type: 3}
 --- !u!1 &5830181858009680814
 GameObject:
   m_ObjectHideFlags: 0

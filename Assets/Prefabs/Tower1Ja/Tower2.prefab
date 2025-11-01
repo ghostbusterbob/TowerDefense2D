@@ -709,6 +709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b64e50dd4d126c4bb8cc02320b3e818, type: 3}
+      propertyPath: m_TagString
+      value: NonSpecial
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -749,7 +753,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  healthText: {fileID: 0}
   towerPlaced: 0
+  towerPov: {fileID: 355728895023851}
   towerCost: 50
 --- !u!64 &2909365264833302558
 MeshCollider:

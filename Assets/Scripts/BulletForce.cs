@@ -12,6 +12,7 @@ public class BulletForce : MonoBehaviour
     [SerializeField] private int damageAmount = 10;
     
     [SerializeField] private bool slowEffect;
+    [SerializeField] private GameObject bulletImpactEffect;
 
     private EnemyMover enemyMover;
     void Start()
@@ -34,7 +35,8 @@ public class BulletForce : MonoBehaviour
                 enemyMover = other.transform.GetComponent<EnemyMover>();
                 StartCoroutine(RespawnEnemies(enemyMover));
             }
-            
+            var impactEffect = Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);   
+            Destroy(impactEffect, 3f);
             Destroy(gameObject);
         }
     }

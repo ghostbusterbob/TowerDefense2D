@@ -9,6 +9,9 @@ public class TowerStatus : MonoBehaviour
    private int initialHealth; 
    public bool towerPlaced = false;
    private bool destroyed = false;
+   
+
+   public Transform towerPov;
 
 
    public int towerCost;
