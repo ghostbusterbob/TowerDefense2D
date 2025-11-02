@@ -185,7 +185,7 @@ MonoBehaviour:
   shadowMode: 1
   renderLayer:
     m_LayerIndex: 0
-  pointCount: 100
+  pointCount: 1000
   multiplyByArea: 0
   pointLODFactor: 1
   randomiseSeed: 1
@@ -195,7 +195,7 @@ MonoBehaviour:
   useDensity: 1
   densityCutoff: 0.5
   useLength: 1
-  lengthMapping: {x: 0, y: 1}
+  lengthMapping: {x: 0, y: 0.34825218}
   projectType: 0
   projectMask:
     serializedVersion: 2

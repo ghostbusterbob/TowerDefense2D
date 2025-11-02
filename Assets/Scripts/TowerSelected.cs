@@ -46,6 +46,8 @@ public class TowerSelected : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
+                towerStatus.ToggleUi();
+
                 lerpInitial = true;
                 lerpCam = false;
             }
@@ -94,6 +96,7 @@ public class TowerSelected : MonoBehaviour
                edgeCameraMovement.enabled = false;   
                 
                towerStatus = hit.transform.GetComponent<TowerStatus>();
+               towerStatus.ToggleUi();
                lerpCam = true;
             }
         }

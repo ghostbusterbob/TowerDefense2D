@@ -754,7 +754,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthText: {fileID: 0}
+  TowerUi: {fileID: 4173562145601218814}
   towerPlaced: 0
+  SpectatingTower: 0
   towerPov: {fileID: 355728895023851}
   towerCost: 50
 --- !u!64 &2909365264833302558
