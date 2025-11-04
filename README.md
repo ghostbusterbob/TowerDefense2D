@@ -52,11 +52,13 @@ Je schets bevat minimaal:
 Toren 1 naam, bereik, schade, unieke eigenschap.
 Enrique, hele map. 50dmg, breekt de soundbarrier.
 
-Atlas, **Bereik:** Groot, **Schade:** 100 dmg splash (gebiedsschade), **Unieke eigenschap:** Werpt rotsblokken die meerdere vijanden tegelijk raken.
+Atlas, **Bereik:** Groot, **Schade:** 100 dmg splash (gebiedsschade).
+King Von, **Berijk** Gemiddeld, **Shade:** 10dmg.
+Snail, **Berijk** klein, **Schade:** 5dmg, unieke eigenschap: maakt enemies langzamer wanneer ze zijn geraakt.
 
 
 
-Eventuele extra torens:
+
 
 ## 5. Vijanden
 Vijand 1 naam, snelheid, levens, speciale eigenschap.
