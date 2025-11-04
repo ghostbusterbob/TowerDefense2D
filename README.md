@@ -31,7 +31,7 @@ Planning: https://trello.com/b/Yp4Awj6w/towerdefenses
 Titel: Tower Tactics
 
 Elevator pitch, maximaal twee zinnen:
-Leuke artstyle en goeie gameplay. Ook is het erg interactief.
+Leuke artstyle en goeie gameplay. Het is 3D en is erg physics based (bullets etc.)
 
 
 ## 2. Wat maakt jouw tower defense uniek
