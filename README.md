@@ -27,6 +27,8 @@ Datum: 08/09/2025
 
 Planning: https://trello.com/b/Yp4Awj6w/towerdefenses
 
+GAMEPLAY: https://youtu.be/7-Eu07EzO-o
+
 ## 1. Titel en elevator pitch
 Titel: TOWER DEFENSE PLAYGROUND
 
