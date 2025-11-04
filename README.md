@@ -28,7 +28,7 @@ Datum: 08/09/2025
 Planning: https://trello.com/b/Yp4Awj6w/towerdefenses
 
 ## 1. Titel en elevator pitch
-Titel: Tower Tactics
+Titel: TOWER DEFENSE PLAYGROUND
 
 Elevator pitch, maximaal twee zinnen:
 Leuke artstyle en goeie gameplay. Het is 3D en is erg physics based (bullets etc.)
