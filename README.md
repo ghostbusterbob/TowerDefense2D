@@ -139,35 +139,34 @@ Als de vijand dichtbij genoeg is kiest hij het volgende punt. Bij de goal gaat �
 - Acceptatie:
 Tien vijanden lopen van start naar de goal zonder vastlopers en verbruiken elk één leven.
 Alle tien vijanden bereiken achtereenvolgens elk waypoint binnen één seconde na elkaar.
+11.1 Vijandbeweging over het pad
+Keuze: geen
+Risico: idk
+Oplossing: ennemys
+Acceptatie: idk
 
-### 11.1 Vijandbeweging over het pad
-- Keuze: 
-- Risico:
-- Oplossing:
-- Acceptatie:
+
+11.2 Doel kiezen en schieten
+Keuze: voorste
+Risico: geen
+Oplossing: geen
+Acceptatie: geen
+
+11.3 Waves en spawnen
+Keuze: geen
+Risico: geen
+Oplossing: geen
+Acceptatie: geen
 
 
-### 11.2 Doel kiezen en schieten
-- Keuze:
-- Risico:
-- Oplossing:
-- Acceptatie:
+11.4 Economie en levens
+Keuze: geen
+Risico: geen
+Oplossing: geen
+Acceptatie: geen
 
-### 11.3 Waves en spawnen
-- Keuze:
-- Risico:
-- Oplossing:
-- Acceptatie:
-
-  
-### 11.4 Economie en levens
-- Keuze:
-- Risico:
-- Oplossing:
-- Acceptatie:
-
-### 11.5 UI basis
-- Keuze:
-- Risico:
-- Oplossing:
-- Acceptatie:
+11.5 UI basis
+Keuze: geen
+Risico: geen
+Oplossing: geen
+Acceptatie: geen
